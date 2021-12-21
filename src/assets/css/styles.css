@@ -1,0 +1,10 @@
+code {
+  display: inline-block;
+  width: 70vw;
+  height: 40vh;
+  border: solid 1px black;
+  background-color: #000;
+  color: white;
+  overflow: scroll;
+  scrollbar-width: none;
+}

@@ -1,0 +1,125 @@
+
+bot.on("message", (event) => {
+    console.log(event);
+    if (event.text === "/start" || event.text === "/start@safe_groupbot") {
+      botGreet(bot, event);
+    }
+  });
+
+  // bot.on("callback_query", (event) => {
+  //   console.log(event);
+  //   if (event.data === "/settings") {
+  //     bot.editMessageText("Settings", {
+  //       chat_id: event.message.chat.id,
+  //       message_id: event.message.message_id,
+  //       reply_markup: {
+  //         inline_keyboard: [[{ text: "◀️ Назад", callback_data: "/back" }]],
+  //       },
+  //     });
+  //   } else if (event.data === "/back") {
+  //     bot.editMessageText(context(event), {
+  //       chat_id: event.message.chat.id,
+  //       message_id: event.message.message_id,
+  //       parse_mode: greetingObj.parse_mode,
+  //       reply_markup: greetingObj.reply_markup,
+  //     });
+  //   }
+  // });
+
+  // function botStart() {
+  //   bot.on("message", async (event) => {
+  //     console.log(event);
+  //     io.emit("bot sender", JSON.stringify(event, null, 4));
+  //     if (event.reply_to_message) {
+  //       try {
+  //         let user = event.reply_to_message.from.id;
+  //         bot.sendMessage(user, "replied message");
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     }
+  //     if (event.new_chat_member) {
+  //       try {
+  //         await bot.sendMessage(
+  //           event.chat.id,
+  //           `Welcome ${event.new_chat_member.first_name}`
+  //         );
+  //       } catch (err) {
+  //         if (err) throw err;
+  //       }
+  //     }
+  //   });
+  //   bot.setMyCommands([
+  //     { command: "/start", description: "The starts bot" },
+  //     { command: "/info", description: "Bot information" },
+  //   ]);
+  // }
+  // botStart();
+
+
+
+  //config.js
+
+  // })();
+/*
+(async () => {
+  const Promise = await require("bluebird");
+  Promise.config({
+    cancellation: true,
+  });
+  const TelegramBot = await require("node-telegram-bot-api");
+
+  const token = " ";
+  await new Promise((resolve, reject) => {
+    const bot = new TelegramBot(token, { polling: true });
+    bot.on("message", async (event) => {
+      console.log(event);
+      // let admins = await bot.getChatMemberCount(event.chat.id);
+      // console.log("admins: ", await admins);
+      if (event.reply_to_message) {
+        try {
+          let user = event.reply_to_message.from.id;
+          bot.sendMessage(user, "replied message");
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      if (event.new_chat_member) {
+        try {
+          // await bot.sendMessage(
+          //   event.new_chat_member.id,
+          //   `Welcome ${event.new_chat_member.first_name}`
+          // );
+          await bot.sendMessage(
+            event.chat.id,
+            `Welcome ${event.new_chat_member.first_name}`
+          );
+        } catch (err) {
+          if (err) throw err;
+        }
+      }
+    });
+    bot.setMyCommands([
+      { command: "/start", description: "The starts bot" },
+      { command: "/info", description: "Bot information" },
+    ]);
+  });
+})();
+// const { Telegraf } = require("telegraf");
+// const bot = new Telegraf(token);
+
+// bot.start((ctx) => ctx.reply("Welcome"));
+// bot.help((ctx) => ctx.reply("Send me a sticker"));
+// bot.on("sticker", (ctx) => ctx.reply("👍"));
+// bot.hears("hi", (ctx) => ctx.reply("Hey there"));
+// bot.launch();
+
+// Enable graceful stop
+// process.once("SIGINT", () => bot.stop("SIGINT"));
+// process.once("SIGTERM", () => bot.stop("SIGTERM"));
+
+// bot.on("file", (event) => {
+//   console.log("file:", event);
+// });
+
+*/
