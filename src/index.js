@@ -20,6 +20,11 @@
   const { callback_query } = require("./models/callback_queries.js");
   const { setCommands } = require("./models/botCommands.js");
 
+  // let obj = bot.getUpdates({
+  //   allowed_updates: ["message", "edited_channel_post", "callback_query"],
+  // });
+  // // console.log(await obj);
+
   botOn(bot);
   setCommands(bot);
   callback_query(bot);

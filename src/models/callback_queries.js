@@ -11,7 +11,7 @@ function callback_query(bot) {
     if (event.data === "/settings") {
       botSettings(bot, event, "editMessage");
     } else if (event.data === "/help") {
-      helpBot(bot, event, "help");
+      helpBot(bot, event, "editMessage");
     } else if (event.data === "/info") {
       infoBot(bot, event, "editMessage");
     } else if (event.data === "/back") {
